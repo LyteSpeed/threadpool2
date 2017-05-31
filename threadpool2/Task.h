@@ -1,17 +1,23 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <cstdio>
 #include <mutex>
 
 class Task {
 public:
-	Task(long z, std::string n);
-	void run();
+	Task(long const, std::string const&);
+
+	// Virtual allows child class to override
+	// = 0 FORCES child class to override, cannot create instance of a task object
+	virtual void run() = 0;
 
 private:
-	std::string name;
-	long x;
+	
+	//Made these constant, we will never change them
 
-friend class ThreadPool;
+	std::string const name_;
+	
+	// unique Id for tasks
+	long const task_id_;
+
 };

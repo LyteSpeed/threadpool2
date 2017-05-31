@@ -1,13 +1,7 @@
 #include "Task.h"
 
-Task::Task(long z, std::string n) {
-	x = z;
-	name = n;
-}
-
-void Task::run() {
-	std::cout << name << " running" << std::endl;
-	long r = 0;
-	for (int i = 0; i <= x; i++)
-		r += i;
+// Best way to init variables :) http://en.cppreference.com/w/cpp/language/initializer_list
+Task::Task(long const id, std::string const& name)
+	: task_id_(id), name_(name)
+{
 }
