@@ -19,7 +19,7 @@ public:
 	ThreadPool::~ThreadPool();
 
 	// We mark this method as constant because it will not effect the ThreadPool
-	uint32_t get_size() const;
+	size_t get_size() const;
 	
 	
 	void insert(Task &);

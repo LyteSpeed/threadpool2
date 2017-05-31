@@ -37,7 +37,7 @@ void ThreadPool::insert(Task & t) {
 
 // Returns # of threads
 
-uint32_t ThreadPool::get_size() const {
+size_t ThreadPool::get_size() const {
 	return threads_.size();
 }
 
